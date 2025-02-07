@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { Logo } from "./Logo";
+// import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
 
@@ -56,7 +56,7 @@ export function Header() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="hidden md:flex items-center space-x-6"
         >
-          
+
           {/* <Link href="/" className="text-sm font-medium">
             Home
           </Link> */}
