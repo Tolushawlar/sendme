@@ -87,7 +87,7 @@ export function ComplaintForm() {
 
     {/* Complaint Field */}
     <label htmlFor="complaint" className="text-sm font-medium text-gray-700">
-      Complaint
+      Feedback
     </label>
     <textarea
       id="complaint"
@@ -98,7 +98,7 @@ export function ComplaintForm() {
           ? "border-red-500 focus:ring-red-500"
           : "border-gray-300 focus:ring-blue-500"
       }`}
-      placeholder="Write your complaint here..."
+      placeholder="Write your feedback here..."
     />
     {form.formState.errors.complaint && (
       <p className="text-red-500 text-sm">
@@ -115,7 +115,7 @@ export function ComplaintForm() {
       className="w-full md:w-auto px-5 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all flex items-center justify-center"
     >
       {isLoading && <Loader2 className="mr-2 animate-spin" />}
-      {isLoading ? "Submitting..." : "Submit Complaint"}
+      {isLoading ? "Submitting..." : "Submit Feedback"}
     </Button>
   </div>
 </form>

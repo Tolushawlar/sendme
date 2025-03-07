@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Header } from "@/components/Header";
@@ -5,10 +6,12 @@ import { Hero } from "@/components/Hero";
 import { Feature } from "@/components/Feature";
 import { DonationCard } from "@/components/DonationCard";
 import { Faq } from "@/components/Faq";
-import { Newsletter } from "@/components/Newsletter";
+import { ContactSection } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
 import { TestimonalCard } from "@/components/TestimonialCard";
 import { AiFillHome, AiFillPhone, AiFillSignature } from "react-icons/ai";
+import PartnersCarousel from "@/components/ui/partners";
+import Testimonials from "@/components/ui/testimonial";
 
 const Home = () => {
   const donationCards = [
@@ -74,35 +77,8 @@ const Home = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: "Folashade Olaniyan",
-      title: "Happy Homeowner",
-      headline: "A Dream Come True",
-      description:
-        "Your easy application process and competitive interest rates made my homeownership dream a reality. Thank you for making it so simple.",
-      image: "/testimonial2.jpg",
-    },
-    {
-      name: "Kunle Adeyemi",
-      title: "Satisfied Customer",
-      headline: "Professional and Efficient",
-      description:
-        "The team at Boslight was incredibly helpful and knowledgeable. They guided me through the entire process and ensured I got the best deal.",
-      image: "/testimonial3.jpg",
-    },
-    {
-      name: "John Emeka",
-      title: "Thriving Entrepreneur",
-      headline: "A Game-Changer",
-      description:
-        "Your quick loan approval and flexible repayment terms gave my business the boost it needed. I'm grateful for your support.",
-      image: "/testimonial4.jpg",
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-[#F9F5E8]">
+    <div className="overflow-x-hidden h-full bg-[#F9F5E8]">
       {/* Hero Section */}
       <Header />
       <Hero />
@@ -110,9 +86,13 @@ const Home = () => {
       {/* Feature Section */}
       <Feature />
 
+      <PartnersCarousel />
+
+      {/* <Testimonal />> */}
+     <Testimonials/>
+
       {/* Donation Cards */}
-      <section id="features" className="py-24 bg-[#F9F5E8]">
-        {/* <NewDonationCard /> */}
+      {/* <section id="features" className="py-24 bg-[#F9F5E8]">
         <div className="container px-4 mx-auto">
           <h2 className="text-5xl font-bold text-center mb-16">
             How We <span className="text-blue-500">Stand Out</span> From Others
@@ -123,78 +103,11 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Faq />
 
-      {/* <Testimonal />> */}
-      <section className="py-24 bg-[#F9F5E8]">
-        {/* <NewDonationCard /> */}
-        <div className="container px-4 mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-16">
-            Hear What Our <span className="text-blue-500">Customers Say</span>{" "}
-            About Us
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((card, index) => (
-              <TestimonalCard key={index} {...card} index={index} />
-            ))}
-          </div>
-        </div>
-
-        <div className="subContact mt-[100px] p-10  bg-white w-full">
-          <div className="text-left lg:ml-[100px]">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Ready to take the next step?
-            </h1>
-            <p className="text-sm text-gray-600 mb-12">
-              Reach out today and let us help you achieve your financial goals.
-            </p>
-          </div>
-          <div className="flex lg:flex-row flex-col items-start lg:justify-evenly">
-            <div className="flex flex-row items-start lg:mb-0 mb-5 ">
-              <div className="p-5 rounded-10 rounded-md border-[2px] border-blue-500">
-                <AiFillHome
-                  color="blue"
-                  size={100}
-                  className="w-8 h-8 mt-1"
-                />
-              </div>{" "}
-              <div className="flex flex-col ml-2">
-                <p className="font-bold text-2xl">Address</p>
-                <p className="lg:max-w-[400px]">
-                  Aminu Street, opposite former lotto central hospital, Lotto
-                  busstop Ogun State
-                </p>{" "}
-              </div>
-            </div>
-            <div className="flex flex-row items-start lg:mb-0 mb-5">
-              <div className="p-5 rounded-10 rounded-md border-[2px] border-blue-500">
-                <AiFillSignature
-                  color="blue"
-                  size={100}
-                  className="w-8 h-8 mt-1"
-                />
-              </div>{" "}
-              <div className="flex flex-col ml-2">
-                <p className="font-bold text-2xl">Email</p>
-                <p>contact@boslightmulti-serviceslimited.com</p>
-              </div>
-            </div>
-            <div className="flex flex-row items-start ">
-              <div className="p-5 rounded-10 rounded-md border-[2px] border-blue-500">
-                <AiFillPhone color="blue" size={100} className="w-8 h-8 mt-1" />
-              </div>{" "}
-              <div className="flex flex-col ml-2">
-                <p className="font-bold text-2xl">Phone Number</p>
-                <p>+234 906 642 8296</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Newsletter />
+      <ContactSection />
 
       <Footer />
     </div>

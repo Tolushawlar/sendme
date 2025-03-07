@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { motion } from "framer-motion";
@@ -6,15 +7,17 @@ import Image from "next/image";
 
 // import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {ColumnSection} from "./ui/columnItem";
+import { defaultColumnSizing } from "@tanstack/react-table";
 
 const cardData = [
   {
     imageSrc: "/bg7.jpeg",
     imageSrc2: "/f2.jpeg",
     imageSrc3: "/f4.jpeg",
-    title: "Boslight is an innovative lending company",
+    title: "We Offer Door-Step Delivery Services",
     description:
-      "Offers fast, unsecured loans without the need for collateral. Once your application is completed, we can disburse funds within just minutes, with a maximum processing time of 24 hours, depending on your profile. Whether you need quick access to up to N5,000,000, Boslight is here to provide reliable financial solutions tailored to your needs. Experience the ease of Smart Money Solutions with Boslight.",
+      "We offer doorstep delivery not only to states within Nigeria but also worldwide.",
   },
 ];
 
@@ -36,21 +39,21 @@ export function Feature() {
   return (
     <div
       id="about"
-      className="w-full bg-[#F9F5E8] space-y-8 py-12 md:py-16 lg:py-20"
+      className="w-full bg-[#F9F5E8] space-y-8"
     >
       <motion.div
         initial="initial"
         animate="animate"
         variants={staggerChildren}
-        className="container px-4 md:px-6"
+        className="w-[100vw] "
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 w-[100vw]">
           {cardData.map((card) => (
             // eslint-disable-next-line react/jsx-key
             <div className="grid grid-col-1 md:grid-col-0 gap-4">
               <div
                 key={card.title}
-                className="bg-white rounded-3xl p-6 shadow-sm max-h-[500px] w-[91vw] md:w-[96vw] flex flex-row"
+                className="bg-white p-[60px] lg:h-[700px] shadow-sm w-[100vw] md:w-[100vw] flex flex-row"
               >
                 <div className="mb-4 flex flex-row w-[90vw] items-center justify-between rounded-2xl">
                   <div className=" flex-row hidden md:flex">
@@ -59,21 +62,21 @@ export function Feature() {
                       alt={card.title}
                       width={400}
                       height={10}
-                      className="w-[10vw] h-96 object-cover rounded-2xl"
+                      className="border-4 border-orange-400 w-[20vw] h-96 object-cover z-10 rounded-2xl"
                     />
                     <Image
                       src={card.imageSrc2}
                       alt={card.title}
                       width={400}
                       height={10}
-                      className="w-[10vw] h-96 ml-5 object-cover rounded-2xl"
+                      className="border-4 border-blue-400 w-[20vw] h-96 relative top-12 right-[170px]  object-cover rounded-2xl"
                     />
                     <Image
                       src={card.imageSrc3}
                       alt={card.title}
                       width={400}
                       height={10}
-                      className="w-[10vw] h-96 ml-[20px] object-cover rounded-2xl"
+                      className="border-4 border-orange-400 w-[20vw] h-96 relative top-[100px] right-[260px] ml-[20px] object-cover rounded-2xl"
                     />
                   </div>
                   <div className="flex flex-col w-[550px] mr-[30px]">
@@ -83,6 +86,7 @@ export function Feature() {
                     <p className="text-gray-500 mt-10 md:text-lg">
                       {card.description}
                     </p>
+                    <ColumnSection/>
                   </div>
                 </div>
 
@@ -94,7 +98,7 @@ export function Feature() {
           ))}
         </div>
 
-        <motion.div variants={fadeInUp} className="mt-8">
+        {/* <motion.div variants={fadeInUp} className="mt-8">
           <Card className="overflow-hidden rounded-3xl border-none bg-blue-500 p-8 text-white">
             <div className="space-y-8">
               <div className="text-center">
@@ -146,7 +150,7 @@ export function Feature() {
               </motion.div>
             </div>
           </Card>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   );
