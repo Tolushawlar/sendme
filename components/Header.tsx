@@ -128,8 +128,9 @@ export function Header() {
           className="hidden md:block"
         >
           <Button className="bg-[#E97B5F] hover:bg-[#E97B5F]/90 text-white fontTomorrow">
-            Get Started
+            Get Started Now
           </Button>
+          
         </motion.div>
       </div>
     </motion.header>

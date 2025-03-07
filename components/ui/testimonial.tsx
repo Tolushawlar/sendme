@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+// import Image from "next/image";
 
 const testimonials = [
     {
@@ -47,7 +47,7 @@ export default function Testimonials() {
   return (
     <section className="relative bottom-[80px] py-24 bg-black text-white">
       <div className="container px-4 mx-auto">
-        <h2 className="text-5xl font-bold text-center mb-16">
+        <h2 className="text-5xl font-bold text-center mb-16 ">
           Hear What Our <span className="text-blue-500">Customers Say</span>{" "}
           About Us
         </h2>
