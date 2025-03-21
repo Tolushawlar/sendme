@@ -211,7 +211,7 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
 
         try {
             const { error } = await supabase
-                .from("deliveryapplications")
+                .from("deliveryApplications")
                 .insert({
                     userid: userData.id,
                     sendername: values.senderName,
