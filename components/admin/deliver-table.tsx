@@ -43,7 +43,7 @@ const columns: ColumnDef<DeliveryApplicationType>[] = [
     header: "Sender Name",
   },
   {
-    accessorKey: "senderphonenumber", 
+    accessorKey: "senderphonenumber",
     header: "Sender Phone",
   },
   {
@@ -69,14 +69,14 @@ const columns: ColumnDef<DeliveryApplicationType>[] = [
   {
     accessorKey: "declaredvalue",
     header: "Declared Value",
-  //   cell: ({ row }) => {
-  //     const amount = parseFloat(row.getValue("declared_value"));
-  //     const formatted = new Intl.NumberFormat("en-US", {
-  //       style: "currency",
-  //       currency: "USD",
-  //     }).format(amount);
-  //     return <div className="font-medium">{formatted}</div>;
-  //   },
+    //   cell: ({ row }) => {
+    //     const amount = parseFloat(row.getValue("declared_value"));
+    //     const formatted = new Intl.NumberFormat("en-US", {
+    //       style: "currency",
+    //       currency: "USD",
+    //     }).format(amount);
+    //     return <div className="font-medium">{formatted}</div>;
+    //   },
   },
   {
     accessorKey: "status",
@@ -103,20 +103,20 @@ function DeliveryDetails({ row }: { row: Row<DeliveryApplicationType> }) {
 
   return (
     <>
-     <Button
+      <Button
         variant="outline"
         onClick={() =>
           push(`${ROUTE.ADMIN_DASHBOARD}/applications/${row.original.id}`)
         }
       >
-      View Details
-    </Button>
-     <DeliveryApplicationModal
-     isOpen={isOpen}
-     setIsOpen={setIsOpen}
-     application={row.original}
-   />
-   </>
+        View Details
+      </Button>
+      <DeliveryApplicationModal
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        application={row.original}
+      />
+    </>
   );
 }
 
@@ -130,9 +130,9 @@ export default function DeliveriesApplicationTable() {
   const [globalFilter, setGlobalFilter] = useState("");
 
   const table = useReactTable({
-    data: deliveries ?? [],
+    data: (deliveries ?? []) as DeliveryApplicationType[],
     columns,
-    onSortingChange: setSorting,
+    getRowId: (row) => row.id,onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
@@ -199,9 +199,9 @@ export default function DeliveriesApplicationTable() {
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                     </TableHead>
                   );
                 })}
