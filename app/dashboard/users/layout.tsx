@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sidebar";
 import { Logo } from "@/components/Logo";
 import { ROUTE } from "@/constants";
+import { Link } from "react-router-dom";
 
 const NavItems = [
   { icon: Home, label: "Dashboard", href: ROUTE.USER_DASHBOARD },
@@ -29,6 +30,10 @@ const UserDashboardLayout = ({ children }: { children: ReactNode }) => {
         <Sidebar>
           <SidebarHeader className="flex h-16 pl-6 justify-center">
             <Logo />
+            {/* <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              SendMe Logistics
+            </h3> */}
+            
           </SidebarHeader>
 
           <SidebarContent>

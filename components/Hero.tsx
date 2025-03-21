@@ -7,8 +7,8 @@ import Carousel from "./carousel";
 export const Hero = () => {
   return (
     <div className="bg-[#F17E2E]">
-      <div className="container mx-auto px-4 py-8 md:py-12 mt-12 md:mt-16">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center place-items-center">
+      <div className="container mx-auto px-4 py-8 md:py-12 mt-20 md:mt-0">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 h-[800px] lg:h-[85vh] items-center place-items-center mt-12 lg:mt-0">
           {/* Left Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

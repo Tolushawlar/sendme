@@ -42,7 +42,7 @@ export function CardFeature() {
         variants={staggerChildren}
         className="w-[100vw] "
       >
-        <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 w-[100vw]">
+        <div className=" grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 mt-[120px] w-[100vw]">
           {cardData.map((card) => (
             // eslint-disable-next-line react/jsx-key
             <div className="grid grid-col-1 md:grid-col-0 gap-4">
@@ -75,13 +75,13 @@ export function CardFeature() {
                     />
                   </div>
                   <div className="flex flex-col w-[550px] mr-[30px]">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl fontTomorrow">
-                      {card.title}
+                    <h2 className="text-2xl font-bold text-blue-900 tracking-tighter sm:text-4xl md:text-5xl fontTomorrow">
+                      We Offer <span className="text-orange-500"> Local and Inter-state Shipping </span> for Personal and Business use
                     </h2>
                     {/* <p className="text-gray-500 mt-10 md:text-lg">
                       {card.description}
                     </p> */}
-                    <LocalColumnSection/>
+                    <LocalColumnSection />
                   </div>
                 </div>
 

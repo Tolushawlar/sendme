@@ -10,6 +10,9 @@ import "@fontsource/tomorrow/400.css";
 import "@fontsource/tomorrow/500.css";
 import "@fontsource/lato";
 import { RootProviders } from "@/components/root-provider";
+import React from "react";
+
+
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -26,7 +29,7 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) { 
+}>) {
   return (
     <ClerkProvider>
       <html lang="en">

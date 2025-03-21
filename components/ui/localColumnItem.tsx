@@ -10,10 +10,10 @@ export default function LocalColumnSection() {
       color: "text-orange-500 border-orange-500",
       text: "Enjoy the convenience of door-to-door delivery. Your packages are in safe hands, reaching their destination securely and on time, every time.",
     },
-    {
-      color: "text-green-500 border-green-500",
-      text: "Ship to USA, Canada, & UK.",
-    },
+    // {
+    //   color: "text-green-500 border-green-500",
+    //   text: "Ship to USA, Canada, & UK.",
+    // },
   ];
 
   return (

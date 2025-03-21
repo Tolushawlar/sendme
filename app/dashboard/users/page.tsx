@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ProfileForm } from "@/components/user/profile-form";
-import { LoanApplicationForm } from "@/components/user/loan-app";
+// import { LoanApplicationForm } from "@/components/user/loan-app";
+import { DeliveryApplicationForm } from "@/components/user/deliver-app";
 
 export default async function UserDashboard() {
   const user = await currentUser();
@@ -86,7 +87,7 @@ export default async function UserDashboard() {
       <Tabs defaultValue="loanApplication" className="w-full">
         <TabsList>
           <TabsTrigger value="profile">Profile</TabsTrigger>
-          <TabsTrigger value="loanApplication">Loan Application</TabsTrigger>
+          <TabsTrigger value="loanApplication">Delivery Form</TabsTrigger>
         </TabsList>
         <TabsContent value="profile">
           <Card>
@@ -117,13 +118,14 @@ export default async function UserDashboard() {
         <TabsContent value="loanApplication">
           <Card>
             <CardHeader>
-              <CardTitle>Loan Application</CardTitle>
+              <CardTitle>Package Delivery Form</CardTitle>
               <CardDescription>
-                To send in your loan application, please fill the form below
+                To send your package, please fill the form below
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <LoanApplicationForm userData={currentUserInfo} />
+              <DeliveryApplicationForm userData={currentUserInfo} />
+              {/* <LoanApplicationForm userData={currentUserInfo} /> */}
             </CardContent>
           </Card>
         </TabsContent>

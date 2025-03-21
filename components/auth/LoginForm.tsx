@@ -44,6 +44,7 @@ export const LoginForm = () => {
         identifier: email,
         password,
       });
+      console.log(result);
       if (result.status === "complete") {
         await setActive({ session: result.createdSessionId });
         push("/dashboard/admin");

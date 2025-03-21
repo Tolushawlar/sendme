@@ -20,6 +20,9 @@ export default function LoginPage() {
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <Logo />
+            {/* <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              SendMe Logistics
+            </h1> */}
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Welcome Back

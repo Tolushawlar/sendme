@@ -20,7 +20,7 @@ const AboutPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center">
+      <section className="relative mt-[120px] lg:mt-0 h-[60vh] md:h-[70vh] lg:h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
             src="/background.jpg"
@@ -85,7 +85,7 @@ const AboutPage = () => {
               viewport={{ once: true }}
               className="space-y-6"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 leading-tight">
+              <h2 className="text-3xl font-bold text-blue-900 tracking-tighter sm:text-4xl md:text-5xl fontTomorrow  leading-tight">
                 About <span className="text-[#F17E2E]">Sendme</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">

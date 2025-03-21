@@ -5,19 +5,19 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const carouselData = [
   {
-    title: "Redefining Logistics Excellence.",
+    title: "Leading Logistics in Nigeria.",
     subtitle:
-      "With award-winning services and cutting-edge solutions, we set the standard for fast, reliable, and efficient deliveries.",
+      "With extensive coverage across all 36 states and reliable last-mile delivery solutions, we connect businesses and customers nationwide.",
   },
   {
-    title: "Real-Time Tracking at Your Fingertips.",
+    title: "Track Deliveries Pan-Nigeria.",
     subtitle:
-      "Know the exact location of your shipments every second. Transparency and efficiency, all in one platform.",
+      "Monitor your shipments in real-time from Lagos to Kano, Port Harcourt to Abuja. Complete visibility across Nigeria's terrain.",
   },
   {
-    title: "Seamless Supply Chain Solutions.",
+    title: "End-to-End Nigerian Supply Chain.",
     subtitle:
-      "From freight forwarding to warehousing and last-mile delivery, we handle it all—so you don’t have to.",
+      "From interstate freight movement to warehousing in major cities and local deliveries, we understand Nigeria's unique logistics needs.",
   },
 ];
 

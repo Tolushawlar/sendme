@@ -10,7 +10,7 @@ const baseHref = "/dashboard/admin";
 
 const navItems = [
   { icon: LayoutDashboard, label: "Dashboard", href: baseHref },
-  { icon: File, label: "Applications", href: `${baseHref}/applications` },
+  { icon: File, label: "Delivery Orders", href: `${baseHref}/applications` },
   // { icon: Users, label: "Users", href: "#" },
 ];
 

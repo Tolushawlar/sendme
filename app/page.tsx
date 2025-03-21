@@ -12,6 +12,9 @@ import { TestimonalCard } from "@/components/TestimonialCard";
 import { AiFillHome, AiFillPhone, AiFillSignature } from "react-icons/ai";
 import PartnersCarousel from "@/components/ui/partners";
 import Testimonials from "@/components/ui/testimonial";
+import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Plane, Clock, Shield, Globe, FileCheck, Package, ArrowRight } from "lucide-react";
 
 const Home = () => {
   const donationCards = [
@@ -89,7 +92,7 @@ const Home = () => {
       <PartnersCarousel />
 
       {/* <Testimonal />> */}
-     <Testimonials/>
+      <Testimonials />
 
       {/* Donation Cards */}
       {/* <section id="features" className="py-24 bg-[#F9F5E8]">
@@ -107,8 +110,32 @@ const Home = () => {
 
       <Faq />
 
-      <ContactSection />
+      {/* <ContactSection /> */}
 
+      {/* CTA Section */}
+      <div className="relative bottom-14 max-w-7xl border-blue-900  mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="bg-white rounded-3xl p-8 md:p-12 text-center shadow-xl"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-6">
+            Ready to Ship Internationally?
+          </h2>
+          <p className="text-blue-900/80 mb-8 text-lg">
+            Get started with our international shipping services today. Our team
+            is ready to assist you with any questions.
+          </p>
+          <Link
+            href="/dashboard/users"
+            className="inline-flex items-center px-8 py-4 bg-orange-500 text-white rounded-full font-semibold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-orange-500/25"
+          >
+            Get Started Now
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </Link>
+        </motion.div>
+      </div>
       <Footer />
     </div>
   );

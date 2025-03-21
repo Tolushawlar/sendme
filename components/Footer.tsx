@@ -1,21 +1,22 @@
 import Link from "next/link";
+import { Logo } from "./Logo";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 export function Footer() {
   return (
     <footer className="relative py-8 md:py-12 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 relative bottom">
+          <div className="flex items-start gap-2 relative  lg:bottom-8">
+            <Logo />
+            {/* <p className="text-xl font-semibold">Logo</p> */}
+          </div>
+
           {/* Brand Section */}
           <div className="flex-1">
             {/* Logo and Tagline */}
             <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                {/* <Logo /> */}
-                <p className="text-xl font-semibold">Logo</p>
-              </div>
-              <h3 className="text-gray-600 text-base md:text-lg">
-                Leading package movement
-              </h3>
+
             </div>
 
             {/* Address Section */}
@@ -75,15 +76,16 @@ export function Footer() {
               <h4 className="text-xl font-bold mb-4">Social</h4>
               <ul className="space-y-3">
                 {[
-                  "Facebook",
-                  "Instagram",
-                  "Twitter"
-                ].map((social) => (
-                  <li key={social}>
+                  { name: "Facebook", Icon: FaFacebook },
+                  { name: "Instagram", Icon: FaInstagram },
+                  { name: "Twitter", Icon: FaTwitter }
+                ].map(({ name, Icon }) => (
+                  <li key={name}>
                     <button
                       className="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-base"
                     >
-                      {social}
+                      <Icon className="w-5 h-5" aria-hidden="true" />
+                      <span className="sr-only">{name}</span>
                     </button>
                   </li>
                 ))}

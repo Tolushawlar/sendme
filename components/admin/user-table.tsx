@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { User } from "@clerk/nextjs/server";
@@ -105,9 +106,9 @@ export const UserTable = ({ data }: { data: User[] }) => {
                 })}
             </DropdownMenuContent>
           </DropdownMenu>
-          <Button className="md:hidden">
+          {/* <Button className="md:hidden">
             <Plus className="mr-2 h-4 w-4" /> Add User
-          </Button>
+          </Button> */}
         </div>
       </div>
       

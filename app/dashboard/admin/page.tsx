@@ -9,6 +9,7 @@ import { calculateUserStats } from "@/lib/utils";
 
 export default async function AdminDashboard() {
   if (!checkRole("superAdmin") && !checkRole("admin")) {
+    console.log(checkRole);
     redirect("/");
   }
 

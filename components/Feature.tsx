@@ -7,7 +7,7 @@ import Image from "next/image";
 
 // import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import {ColumnSection} from "./ui/columnItem";
+import { ColumnSection } from "./ui/columnItem";
 import { defaultColumnSizing } from "@tanstack/react-table";
 
 const cardData = [
@@ -79,14 +79,14 @@ export function Feature() {
                       className="border-4 border-orange-400 w-[20vw] h-96 relative top-[100px] right-[260px] ml-[20px] object-cover rounded-2xl"
                     />
                   </div>
-                  <div className="flex flex-col w-[550px] mr-[30px]">
-                    <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl fontTomorrow">
-                      {card.title}
-                    </h2>
+                  <div className="flex flex-col w-[550px] mr-[30px] text-blue-900">
+                      <h2 className="text-3xl font-bold text-blue-900 tracking-tighter sm:text-4xl md:text-5xl fontTomorrow">
+                        We Offer <span className="text-orange-500">Door-Step </span> Delivery Services
+                      </h2>
                     <p className="text-gray-500 mt-10 md:text-lg">
                       {card.description}
                     </p>
-                    <ColumnSection/>
+                    <ColumnSection />
                   </div>
                 </div>
 

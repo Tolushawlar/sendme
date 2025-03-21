@@ -4,10 +4,17 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
+import { GetQuoteButton } from "./GetQuote";
+// import { Logo } from "./Logo";
+import Image from "next/image";
 
 export function Header() {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { push } = useRouter();
+  const { user } = useUser();
 
   useEffect(() => {
     const updateScroll = () => {
@@ -27,27 +34,41 @@ export function Header() {
     { href: "/about", label: "About Us" },
     { href: "/local", label: "Local" },
     { href: "/International", label: "International" },
-    { href: "/faq", label: "FAQ's" },
+    { href: "/termsCondition", label: "T&C's" },
   ];
+
+  const handleRoute = () => {
+    if (user) {
+      return push("/dashboard/users");
+    }
+    push("/login");
+  };
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-xl"
       initial={{ backgroundColor: "rgba(255, 255, 255, 0)" }}
       animate={{
         backgroundColor: hasScrolled || isMenuOpen
-          ? "rgba(255, 255, 255, 0.8)"
-          : "rgba(255, 255, 255, 0)",
-        backdropFilter: hasScrolled || isMenuOpen ? "blur(10px)" : "blur(0px)",
+          ? "white"
+          : "white",
+        backdropFilter: hasScrolled || isMenuOpen ? "blur(0px)" : "blur(0px)",
       }}
     >
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex items-center justify-between ">
+        <Image
+          src="/logo2.png"
+          alt="Logo"
+          width={150}
+          height={150}
+          className="object-contain"
+        />
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <p>logo</p>
+
         </motion.div>
 
         {/* Hamburger Menu Button */}
@@ -112,12 +133,12 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Button
-            className="bg-[#E97B5F] hover:bg-[#E97B5F]/90 text-white fontTomorrow mt-4"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Get Started
-          </Button>
+          <div className="flex items-center gap-4">
+            <GetQuoteButton />
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white fontTomorrow" onClick={handleRoute}>
+              {user ? "Dashboard" : "Get Started →"}
+            </Button>
+          </div>
         </motion.div>
 
         {/* Desktop Button */}
@@ -127,10 +148,12 @@ export function Header() {
           transition={{ duration: 0.5 }}
           className="hidden md:block"
         >
-          <Button className="bg-[#E97B5F] hover:bg-[#E97B5F]/90 text-white fontTomorrow">
-            Get Started Now
-          </Button>
-          
+          <div className="flex items-center gap-4">
+            <GetQuoteButton />
+            <Button className="bg-orange-500 hover:bg-orange-600 text-white fontTomorrow" onClick={handleRoute}>
+              {user ? "Dashboard" : "Get Started →"}
+            </Button>
+          </div>
         </motion.div>
       </div>
     </motion.header>

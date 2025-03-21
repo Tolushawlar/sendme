@@ -64,13 +64,16 @@ export const RegisterForm = ({ setPendingVerification }: RegisterFormProps) => {
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
             <Logo />
+            {/* <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            SendMe Logistics
+          </h1> */}
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Create an Account
           </h1>
 
           <p className="text-gray-600">
-            Join us today and start making a difference
+            Join us today and send your package with a difference
           </p>
         </div>
 
@@ -132,12 +135,9 @@ export const RegisterForm = ({ setPendingVerification }: RegisterFormProps) => {
               className="text-sm text-gray-600 cursor-pointer"
             >
               I agree to the{" "}
-              <Link href="/terms" className="text-[#2A9D8F] hover:underline">
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link href="/privacy" className="text-[#2A9D8F] hover:underline">
-                Privacy Policy
+              <Link href="/termsCondition" className="text-[#2A9D8F] hover:underline">
+                Terms of Service {" "}
+                and{" "} Privacy Policy
               </Link>
             </label>
           </div>

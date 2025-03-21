@@ -1,3 +1,4 @@
+import { metadata } from "./app/layout";
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
@@ -7,11 +8,17 @@ const routeMatchers = {
   auth: createRouteMatcher(["/login", "/register"]),
 };
 
+const adminId = "user_2u7eSVvTPXDMSEnZorMW3Hw034N";
+
 export default clerkMiddleware(async (auth, req) => {
   const { admin, user, auth: authRoutes } = routeMatchers;
-  const { sessionClaims } = await auth();
-  const role = sessionClaims?.metadata?.role ?? "";
+  const { sessionClaims, userId } = await auth();
+  console.log("the session info" + sessionClaims?.metadata);
+  const isAdmin = userId === adminId;
+  console.log("Is admin:", isAdmin);
   const isAuthenticated = !!sessionClaims;
+  console.log(isAuthenticated);
+  console.log("Current user:", userId);
 
   const url = new URL(req.url);
 
@@ -25,31 +32,28 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
-  // Admin and SuperAdmin role access
+  // Admin access check
   if (admin(req)) {
-    if (["superAdmin", "admin"].includes(role)) {
+    console.log(req);
+    if (isAdmin) {
       return NextResponse.next(); // Allow access
     } else {
       return NextResponse.redirect(new URL("/dashboard/users", req.url));
     }
   }
 
-  // Prevent admin users from accessing `/dashboard/users`
-  if (user(req) && ["superAdmin", "admin"].includes(role)) {
+  // Prevent admin from accessing `/dashboard/users`
+  if (user(req) && isAdmin) {
     return NextResponse.redirect(new URL("/dashboard/admin", req.url));
   }
 
   // Redirect non-admin users trying to access admin routes
-  if (
-    isAuthenticated &&
-    !["superAdmin", "admin"].includes(role) &&
-    admin(req)
-  ) {
+  if (isAuthenticated && !isAdmin && admin(req)) {
     return NextResponse.redirect(new URL("/dashboard/users", req.url));
   }
 
   // Allow non-admin users to access `/` and their dashboard
-  if (isAuthenticated && !["superAdmin", "admin"].includes(role)) {
+  if (isAuthenticated && !isAdmin) {
     if (user(req)) {
       return NextResponse.next(); // Allow user dashboard access
     }

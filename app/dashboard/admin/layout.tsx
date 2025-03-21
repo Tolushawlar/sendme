@@ -25,7 +25,10 @@ const AdminDashboardLayout = ({ children }: { children: ReactNode }) => {
       <div className="flex min-h-screen bg-[#F9F5E8] flex-1">
         <Sidebar>
           <SidebarHeader className="flex h-16 pl-6 justify-center">
-            <Logo />
+             <Logo />
+             {/* <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              SendMe Logistics
+            </h3> */}
           </SidebarHeader>
 
           <SidebarContent>

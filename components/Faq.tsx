@@ -36,29 +36,29 @@ export function Faq() {
   const [openItem, setOpenItem] = useState<number | null>(null);
 
   return (
-    <section className="relative bottom-[150px] py-24 bg-black text-white">
+    <section className="relative bottom-[150px] py-24 bg-white text-blue-900">
       <div className="container px-4 mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-16">
-          Frequently Asked <span className="text-blue-500">Questions</span>
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl fontTomorrow  mb-16">
+          Frequently Asked <span className="text-orange-500">Questions</span>
         </h2>
 
         <div className="max-w-3xl mx-auto space-y-4">
           {faqItems.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-white bg-opacity-10 p-6 rounded-xl shadow-lg backdrop-blur-lg border border-white/20"
+              className="bg-blue-50 p-6 rounded-xl shadow-lg border border-blue-100"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
             >
               <button
-                className="w-full flex justify-between items-center text-left text-lg font-medium text-blue-400"
+                className="w-full flex justify-between items-center text-left text-xl font-medium text-blue-700"
                 onClick={() => setOpenItem(openItem === index ? null : index)}
               >
                 <span>{item.question}</span>
                 <ChevronDown
                   className={`w-6 h-6 transition-transform duration-300 ${
-                    openItem === index ? "rotate-180 text-blue-400" : "text-gray-300"
+                    openItem === index ? "rotate-180 text-orange-500" : "text-blue-300"
                   }`}
                 />
               </button>
@@ -72,7 +72,7 @@ export function Faq() {
                     transition={{ duration: 0.4 }}
                     className="overflow-hidden mt-3"
                   >
-                    <p className="text-gray-300 text-sm">{item.answer}</p>
+                    <p className="text-black text-md text-left">{item.answer}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
