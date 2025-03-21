@@ -213,7 +213,7 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
             const { error } = await supabase
                 .from("deliveryApplications")
                 .insert({
-                    userid: userData.id,
+                    user_id: userData.id,
                     sendername: values.senderName,
                     senderphonenumber: values.senderPhoneNumber,
                     receivername: values.receiverName,
