@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { DetailCard, DetailRow } from "@/components/admin/details-card";
