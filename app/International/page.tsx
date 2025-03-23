@@ -411,7 +411,7 @@ export default function InternationalPage() {
                 </div>
 
                 {/* Stats Section */}
-                <div className="bg-[#F9F5E8] py-16">
+                <div className="bg-[url('/background.jpg')] bg-cover bg-center bg-no-repeat py-16">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             <motion.div

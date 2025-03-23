@@ -21,6 +21,13 @@ body {
   }
 }
 
+@layer utilities {
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

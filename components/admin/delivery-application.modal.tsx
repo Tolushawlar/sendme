@@ -25,7 +25,7 @@ import {
           <DialogHeader>
             <DialogTitle>Delivery Application Details</DialogTitle>
             <DialogDescription>
-              Full information for the delivery application of {application.sender_name}            </DialogDescription>
+              Full information for the delivery application of {application.sendername}            </DialogDescription>
           </DialogHeader>
           <ScrollArea className="h-[400px] w-full rounded-md border p-4">
             <div className="grid grid-cols-2 gap-4">

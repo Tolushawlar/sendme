@@ -6,6 +6,7 @@ import { Feature } from "@/components/Feature";
 import { MissionVision } from "@/components/ui/missionVisonData";
 import { motion } from "framer-motion";
 import { TruckIcon, GlobeIcon, UsersIcon, AwardIcon } from "lucide-react";
+import TeamSection from "@/components/TeamSection";
 
 const AboutPage = () => {
   const stats = [
@@ -31,7 +32,7 @@ const AboutPage = () => {
             priority
           />
         </div>
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -125,6 +126,9 @@ const AboutPage = () => {
 
       {/* Features Section */}
       <Feature />
+
+      {/* Team Section */}
+      <TeamSection />
 
       {/* Mission & Vision Section */}
       <MissionVision />

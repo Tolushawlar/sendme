@@ -1,4 +1,4 @@
-import { metadata } from "./app/layout";
+// import { metadata } from "./app/layout";
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
@@ -20,7 +20,7 @@ export default clerkMiddleware(async (auth, req) => {
   console.log(isAuthenticated);
   console.log("Current user:", userId);
 
-  const url = new URL(req.url);
+  // const url = new URL(req.url);
 
   // Redirect unauthenticated users to login
   if (!isAuthenticated && (admin(req) || user(req))) {
@@ -57,10 +57,10 @@ export default clerkMiddleware(async (auth, req) => {
     if (user(req)) {
       return NextResponse.next(); // Allow user dashboard access
     }
-    // Do not redirect from `/`
-    if (url.pathname !== "/") {
-      return NextResponse.redirect(new URL("/dashboard/users", req.url));
-    }
+    // // Do not redirect from `/`
+    // if (url.pathname !== "/") {
+    //   return NextResponse.redirect(new URL("/dashboard/users", req.url));
+    // }
   }
 
   // Allow all other requests to proceed, including `/`
