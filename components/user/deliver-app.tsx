@@ -21,6 +21,7 @@ import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import supabase from "@/supabase";
 import { deliveryFormSchema } from "@/schemas/deliver";
+import { DeliveryApplicationType } from "@/types/database.types";
 
 type DeliveryFormData = z.infer<typeof deliveryFormSchema>;
 
@@ -31,7 +32,7 @@ function CustomCheckboxField({
 }: {
     control: any;
     name: string;
-    label: string;
+    label: string | React.ReactNode;
 }) {
     return (
         <FormField
@@ -227,7 +228,7 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
                     declaredvalue: values.declaredValue,
                     deliverydate: new Date().toISOString(),
                     status: "pending"
-                });
+                } as unknown as DeliveryApplicationType);
 
             if (error) {
                 console.error("Supabase error:", error);
@@ -358,7 +359,7 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
                         <CustomCheckboxField
                             control={form.control}
                             name="acceptShippingPolicy"
-                        
+
                             label={
                                 <div className="text-sm text-gray-600">
                                     I agree to the shipping policy and terms of service. I understand

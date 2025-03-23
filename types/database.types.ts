@@ -9,7 +9,7 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      deliveryApplications: {
+      deliveryapplications: {
         Row: {
           id: string;
           created_at: string;
@@ -311,4 +311,4 @@ export type LoanApplicationType =
 export type ComplaintFormType =
   Database["public"]["Tables"]["complaint"]["Row"];
 export type DeliveryApplicationType =
-  Database["public"]["Tables"]["deliveryApplications"]["Row"];
+  Database["public"]["Tables"]["deliveryapplications"]["Row"];
