@@ -164,7 +164,7 @@ export default function ExportDeclarationPage() {
 
             {/* Sender Details */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Sender's Details</h3>
+              <h3 className="text-xl font-semibold">Sender&apos;s Details</h3>
               <p className="text-sm text-gray-600">Please fill your details here. All fields marked * must be filled</p>
               
               <div className="grid grid-cols-3 gap-4">
@@ -185,19 +185,19 @@ export default function ExportDeclarationPage() {
               </div>
 
               <div>
-                <Label>Sender's Address *</Label>
+                <Label>Sender&apos;s Address *</Label>
                 <Input {...register("senderAddress")} />
                 {errors.senderAddress && <p className="text-red-500 text-sm">{errors.senderAddress.message}</p>}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label>Sender's Phone Number *</Label>
+                  <Label>Sender&apos;s Phone Number *</Label>
                   <Input {...register("senderPhone")} />
                   {errors.senderPhone && <p className="text-red-500 text-sm">{errors.senderPhone.message}</p>}
                 </div>
                 <div>
-                  <Label>Sender's Email *</Label>
+                  <Label>Sender&apos;s Email *</Label>
                   <Input type="email" {...register("senderEmail")} />
                   {errors.senderEmail && <p className="text-red-500 text-sm">{errors.senderEmail.message}</p>}
                 </div>
@@ -206,7 +206,7 @@ export default function ExportDeclarationPage() {
 
             {/* Receiver Details */}
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold">Receiver's Details</h3>
+              <h3 className="text-xl font-semibold">Receiver&apos;s Details</h3>
               <p className="text-sm text-gray-600">Please fill the receiver's details here. All fields marked * must be filled</p>
               
               <div className="grid grid-cols-3 gap-4">
@@ -228,19 +228,19 @@ export default function ExportDeclarationPage() {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label>Receiver's Phone Number *</Label>
+                  <Label>Receiver&apos;s Phone Number *</Label>
                   <Input {...register("receiverPhone")} />
                   {errors.receiverPhone && <p className="text-red-500 text-sm">{errors.receiverPhone.message}</p>}
                 </div>
                 <div>
-                  <Label>Receiver's Email *</Label>
+                  <Label>Receiver&apos;s Email *</Label>
                   <Input type="email" {...register("receiverEmail")} />
                   {errors.receiverEmail && <p className="text-red-500 text-sm">{errors.receiverEmail.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-4">
-                <Label>Receiver's Address *</Label>
+                <Label>Receiver&apos;s Address *</Label>
                 <Input placeholder="Address Line 1" {...register("receiverAddressLine1")} />
                 {errors.receiverAddressLine1 && <p className="text-red-500 text-sm">{errors.receiverAddressLine1.message}</p>}
                 <Input placeholder="Address Line 2" {...register("receiverAddressLine2")} />
