@@ -214,7 +214,7 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
             const { error } = await supabase
                 .from("deliveryapplications")
                 .insert({
-                    userid: userData.id,
+                    user_id: userData.id,
                     sendername: values.senderName,
                     senderphonenumber: values.senderPhoneNumber,
                     receivername: values.receiverName,
@@ -222,11 +222,12 @@ export function DeliveryApplicationForm({ userData }: { userData: User }) {
                     receiveremail: values.receiverEmail,
                     receiveraddress: values.receiverAddress,
                     receivercity: values.receiverCity,
-                    receiverpostalcode: values.receiverPostalCode,
+                    receiverpostal_code: values.receiverPostalCode,
                     packageweight: values.packageWeight,
                     numberofboxes: values.numberOfBoxes,
                     declaredvalue: values.declaredValue,
                     deliverydate: new Date().toISOString(),
+                    acceptshippingpolicy: values.acceptShippingPolicy,
                     status: "pending"
                 } as unknown as DeliveryApplicationType);
 

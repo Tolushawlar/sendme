@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { Eye, EyeOff } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +19,7 @@ import { LoginFormDto, loginFormSchema } from "@/schemas/auth";
 
 export const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const { isLoaded, signIn, setActive } = useSignIn();
 
   const {
@@ -77,7 +79,21 @@ export const LoginForm = () => {
             Forgot password?
           </Link>
         </div>
-        <Input id="password" {...register("password")} type="password" />
+        <div className="relative">
+          <Input 
+            id="password" 
+            {...register("password")} 
+            type={showPassword ? "text" : "password"} 
+            className="pr-10"
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          >
+            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+          </button>
+        </div>
         {errors.password && (
           <p className="text-red-500 text-sm">{errors.password.message}</p>
         )}
