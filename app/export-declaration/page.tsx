@@ -207,7 +207,7 @@ export default function ExportDeclarationPage() {
             {/* Receiver Details */}
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">Receiver&apos;s Details</h3>
-              <p className="text-sm text-gray-600">Please fill the receiver's details here. All fields marked * must be filled</p>
+              <p className="text-sm text-gray-600">Please fill the receivers details here. All fields marked * must be filled</p>
               
               <div className="grid grid-cols-3 gap-4">
                 <div>
