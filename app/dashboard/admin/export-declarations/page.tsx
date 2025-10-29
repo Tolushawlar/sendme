@@ -6,33 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Eye } from "lucide-react";
 import supabase from "@/supabase";
+import { Database } from "@/types/database.types";
 
-interface ExportDeclaration {
-  id: string;
-  created_at: string;
-  location: string;
-  shipping_option: string;
-  sender_first_name: string;
-  sender_middle_name?: string;
-  sender_last_name: string;
-  sender_address: string;
-  sender_phone: string;
-  sender_email: string;
-  receiver_first_name: string;
-  receiver_middle_name?: string;
-  receiver_last_name: string;
-  receiver_phone: string;
-  receiver_email: string;
-  receiver_address_line1: string;
-  receiver_address_line2?: string;
-  receiver_city: string;
-  receiver_state: string;
-  receiver_postal_code: string;
-  receiver_country: string;
-  products_list: string;
-  wants_insurance: boolean;
-  status: string;
-}
+type ExportDeclaration = Database["public"]["Tables"]["export_declarations"]["Row"];
 
 export default function ExportDeclarationsPage() {
   const [declarations, setDeclarations] = useState<ExportDeclaration[]>([]);
@@ -51,7 +27,7 @@ export default function ExportDeclarationsPage() {
         .order("created_at", { ascending: false });
 
       if (error) throw error;
-      setDeclarations(data || []);
+      setDeclarations(data as ExportDeclaration[] || []);
     } catch (error) {
       console.error("Error fetching declarations:", error);
     } finally {
