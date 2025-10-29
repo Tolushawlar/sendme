@@ -149,11 +149,11 @@ export default function ExportDeclarationPage() {
                     <SelectValue placeholder="Select shipping option" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="DYB Express (3-5 working days)">DYB Express (3-5 working days)</SelectItem>
-                    <SelectItem value="DYB Express Saver (3-7 working days)">DYB Express Saver (3-7 working days)</SelectItem>
-                    <SelectItem value="DYB Standard Plus (4-8 working days)">DYB Standard Plus (4-8 working days)</SelectItem>
-                    <SelectItem value="DYB Saver (3-10 working days)">DYB Saver (3-10 working days)</SelectItem>
-                    <SelectItem value="DYB Basic Plus (3-10 working days)">DYB Basic Plus (3-10 working days)</SelectItem>
+                    <SelectItem value="SendMe Express (3-5 working days)">SendMe Express (3-5 working days)</SelectItem>
+                    <SelectItem value="SendMe Express Saver (3-7 working days)">SendMe Express Saver (3-7 working days)</SelectItem>
+                    <SelectItem value="SendMe Standard Plus (4-8 working days)">SendMe Standard Plus (4-8 working days)</SelectItem>
+                    <SelectItem value="SendMe Saver (3-10 working days)">SendMe Saver (3-10 working days)</SelectItem>
+                    <SelectItem value="SendMe Basic Plus (3-10 working days)">SendMe Basic Plus (3-10 working days)</SelectItem>
                     <SelectItem value="AIR CARGO (9-15 working days)">AIR CARGO (9-15 working days)</SelectItem>
                     <SelectItem value="SEA CARGO (8-12 weeks)">SEA CARGO (8-12 weeks)</SelectItem>
                   </SelectContent>
@@ -313,7 +313,7 @@ export default function ExportDeclarationPage() {
                     onCheckedChange={(checked) => setValue("confirmedFalseInfo", !!checked)}
                   />
                   <Label className="text-sm">
-                    I understand that where DYB Logistics discovers that I have provided false information by concealing any item not listed above, the items and the whole shipment will not be shipped. If they have already been shipped, I will be responsible for all charges incurred by DYB Logistics in retrieving, destroying, or reshipping the item as may be required by law.
+                    I understand that where SendMe Deliveries discovers that I have provided false information by concealing any item not listed above, the items and the whole shipment will not be shipped. If they have already been shipped, I will be responsible for all charges incurred by SendMe Deliveries in retrieving, destroying, or reshipping the item as may be required by law.
                   </Label>
                 </div>
                 {errors.confirmedFalseInfo && <p className="text-red-500 text-sm">{errors.confirmedFalseInfo.message}</p>}
@@ -377,7 +377,7 @@ export default function ExportDeclarationPage() {
           <div className="mt-8 text-xs text-gray-600 space-y-2">
             <p>Please note:</p>
             <ol className="list-decimal list-inside space-y-1">
-              <li>That DYB Logistics will handle all packages and documentations and hand over the shipment to DHL, FEDEX, UPS, or ARAMEX on your behalf as shipments departs every business day.</li>
+              <li>That SendMe Deliveries will handle all packages and documentations and hand over the shipment to DHL, FEDEX, UPS, or ARAMEX on your behalf as shipments departs every business day.</li>
               <li>All shipping fees once paid shall be non-refundable and non-creditable including in the event that the goods are returned, seized or delayed.</li>
               <li>Delivery timeline is 3 to 10 working days or otherwise indicated based on your shipping option.</li>
               <li>The Consignee must note at the point of delivery on the delivery receipt, damage (if any) to the contents of the shipment.</li>
