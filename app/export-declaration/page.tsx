@@ -135,8 +135,9 @@ export default function ExportDeclarationPage() {
                     <SelectValue placeholder="Select location" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="Ogba Ikeja">Ogba Ikeja</SelectItem>
-                    <SelectItem value="VGC Lekki">VGC Lekki</SelectItem>
+                    <SelectItem value="Akure Ondo">Akure Ondo</SelectItem>
+                    <SelectItem value="Oshodi Lagos">Oshodi Lagos</SelectItem>
+                    <SelectItem value="Akala Express Ibadan">Akala Express Ibadan</SelectItem>
                   </SelectContent>
                 </Select>
                 {errors.location && <p className="text-red-500 text-sm">{errors.location.message}</p>}
